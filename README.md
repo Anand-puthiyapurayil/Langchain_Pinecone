@@ -1,123 +1,77 @@
-# Semantic Search Engine with LangChain, Pinecone, and Hugging Face
+# 🔍 Semantic Search & Recommendation Engine
 
-This project implements a **Semantic Search Engine** using **LangChain**, **Pinecone**, and **Hugging Face Embeddings**. It allows users to perform semantic searches on product and service data, providing context-aware results using advanced machine learning models.
-
-## Table of Contents
-- [Features](#features)
-- [Technology Stack](#technology-stack)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Environment Variables](#environment-variables)
-- [Project Structure](#project-structure)
-- [Data Used](#data-used)
-- [How It Works](#how-it-works)
-- [Logging](#logging)
+This repository contains a comprehensive **Semantic Search and Recommendation Engine** built entirely within a single **Jupyter Notebook**. It integrates advanced techniques including embeddings, vector stores, and Retrieval-Augmented Generation (RAG) to dynamically retrieve relevant products and services.
 
 ---
 
-## Features
-- **Semantic Search**: Finds relevant products and services based on natural language queries.
-- **Conversational QA**: Uses a pre-trained language model to answer queries contextually.
-- **Vector Indexing**: Efficient search and retrieval using Pinecone.
-- **Dynamic Document Creation**: Converts product and service data into document objects for indexing.
+## 🚀 Key Features
+
+- **Semantic Search**: Powered by fine-tuned Sentence-BERT embeddings for precise context-aware matching.
+- **Vector Database (Pinecone)**: Efficient storage and fast retrieval of embeddings for similarity search.
+- **Retrieval-Augmented Generation (RAG)**: Utilizes LangChain and ChatGroq (LLaMA3) to provide coherent and contextually accurate recommendations.
+- **Dynamic Query Handling**: Includes metadata-based filtering (e.g., product or service, gender, category).
+- **Natural Language Processing (spaCy)**: Contextual extraction and filtering based on query content.
 
 ---
 
-## Technology Stack
+## 📂 Project Structure
+
+- **Single Jupyter Notebook**: End-to-end implementation covering data ingestion, preprocessing, embedding creation, semantic search, and RAG-powered recommendations.
+
+---
+
+## 🛠️ Technologies Used
+
 - **Python**
+- **Jupyter Notebook**
 - **LangChain**
-- **Pinecone**
-- **Hugging Face Embeddings**
-- **ChatGroq**
-- **dotenv** (for environment variable management)
-- **pandas** (for data handling)
+- **ChatGroq (LLaMA3)**
+- **HuggingFace Embeddings (Sentence-BERT)**
+- **Pinecone Vector Store**
+- **spaCy**
 
 ---
 
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-repo/semantic-search-engine.git
-   cd semantic-search-engine
-   ```
+## 🚦 How to Run
 
-2. Create a virtual environment and activate it:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Linux/Mac
-   venv\Scripts\activate    # On Windows
-   ```
-
-3. Install the required dependencies:
+1. **Setup Environment**:
    ```bash
    pip install -r requirements.txt
    ```
 
----
+2. **Configure API Keys**:
+   - Create a `.env` file with your `GROQ_API_KEY` and `PINECONE_KEY`.
 
-## Usage
-1. **Set up your `.env` file** with the required API keys (see [Environment Variables](#environment-variables)).
-
-2. **Run the Jupyter Notebook** to initialize the embeddings and Pinecone index:
+3. **Run Jupyter Notebook**:
    ```bash
-   jupyter notebook SearchEngine_Pinecone.ipynb
+   jupyter notebook
    ```
 
-3. **Use the semantic search functions** to perform searches on the product and service data.
+---
+
+## 📖 Example Queries
+
+- "Show me men's blue jeans"
+- "I need painting services"
+- "Find women's jeans"
+- "Recommend a product"
+- "I need automotive services"
 
 ---
 
-## Environment Variables
-Create a `.env` file in the project root directory and add the following variables:
-```env
-GROQ_API_KEY=your_chatgroq_api_key
-PINECONE_KEY=your_pinecone_api_key
-PINECONE_ENV=your_pinecone_environment
-```
-Replace the values with your actual API keys.
+## 🎯 Use Case
+
+Ideal for e-commerce platforms, knowledge bases, and recommendation systems where accurate semantic retrieval and personalized recommendations are critical.
 
 ---
 
-## Project Structure
-```
-semantic-search-engine/
-├── SearchEngine_Pinecone.ipynb
-├── requirements.txt
-├── .env
-└── README.md
-```
+## 🤝 Contributing
+
+Feel free to fork, modify, and enhance this project. Contributions are always welcome!
 
 ---
 
-## Data Used
-The project includes example data for products and services:
-- **Products**: Contains product IDs, names, descriptions, gender, and base color.
-- **Services**: Contains service IDs, names, descriptions, and categories.
+## 📜 License
 
----
-
-## How It Works
-### 1. **Loading Environment Variables**
-The `.env` file is used to securely manage API keys for Pinecone and ChatGroq.
-
-### 2. **Initializing Hugging Face Embeddings**
-A fine-tuned SentenceTransformer model is used to generate embeddings for queries and documents.
-
-### 3. **Creating Documents**
-Products and services are converted into document objects that can be indexed in Pinecone.
-
-### 4. **Indexing in Pinecone**
-The documents are indexed in Pinecone for fast and efficient retrieval.
-
-### 5. **Querying with LangChain**
-Queries are processed using LangChain to provide context-aware responses from the indexed data.
-
----
-
-## Logging
-The project logs important events and errors to `semantic_search.log`.
-```
-2025-01-07 10:00:00 - INFO - HuggingFaceEmbeddings initialized with model: models/fine-tuned-sbert-triplet
-2025-01-07 10:05:00 - INFO - ChatGroq LLM initialized successfully.
-```
+Distributed under the MIT License.
 
