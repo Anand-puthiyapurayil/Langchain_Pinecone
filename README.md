@@ -3,6 +3,11 @@
 This repository contains a comprehensive **Semantic Search and Recommendation Engine** built entirely within a single **Jupyter Notebook**. It integrates advanced techniques including embeddings, vector stores, and Retrieval-Augmented Generation (RAG) to dynamically retrieve relevant products and services.
 
 ---
+## 🚀 Demo
+
+
+![RAG](assets/rag.png)
+
 
 ## 🚀 Key Features
 
